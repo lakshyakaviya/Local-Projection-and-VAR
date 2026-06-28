@@ -22,7 +22,7 @@ provided Romer–Romer style narrative shock series used as the external instrum
 
   Installing all libraries used:
 
-  ```bash
+  ```
   pip install "pandas>=2.2" numpy statsmodels scipy matplotlib jupyter
   ```
 
