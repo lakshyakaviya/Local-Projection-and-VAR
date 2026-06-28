@@ -36,7 +36,7 @@ Open each notebook and run it top-to-bottom ("Restart Kernel & Run All"), in thi
 
 `part_A` and `part_B` both read `merged_data.csv`, so `Data_Merge` must be run first to create the merged dataset. 
 
-## Input files (expected in the same folder)
+## Input files (should be in the same folder)
 
 - `GDPC1.csv`, `CPIAUCSL.csv`, `FEDFUNDS.csv`, `UNRATE.csv` — downloaded from FRED
 - `shocks.csv` — provided monetary policy shock series
@@ -53,10 +53,10 @@ Open each notebook and run it top-to-bottom ("Restart Kernel & Run All"), in thi
    lead `y(t+h)` on the current shock, post-2007 macro observations are kept so long-horizon
    leads remain available. This holds the LP sample at a constant 152 observations across
    all horizons.
-4. **Unemployment enters contemporaneously only.** Equation (2) lists `unrate_t` without a
-   lag range, unlike the other regressors (four lags each); we follow the specification as
+4. **Unemployment enters contemporaneously only.** Equation (2) in the PDF lists `unrate_t` without a
+   lag range, unlike the other regressors which have four lags each; we follow the specification as
    written.
-5. **Newey–West bandwidth = h+1** for the LP HAC standard errors (permitted by the task).
+5. **Newey–West bandwidth = h+1** for the LP HAC standard errors as mentioned in the PDF.
 6. **2SLS implemented as a covariance ratio.** With one instrument and one endogenous
    regressor, `delta_j = cov(z, u^j)/cov(z, u^ffr)`; this equals IV2SLS (verified in
    `part_B.ipynb`) and is used inside the bootstrap for speed.
@@ -65,7 +65,7 @@ Open each notebook and run it top-to-bottom ("Restart Kernel & Run All"), in thi
    each residual stays paired with its instrument value, preserving the `cov(z, u^ffr)`
    correlation on which identification depends.
 8. **shocks.csv format.** The file ships with `year, quarter, mp_shock` columns (not the
-   `YYYYQN` string the task sheet describes); a quarterly index is constructed from the
+   `YYYYQN` string the PDF describes); a quarterly index is constructed from the
    `year` and `quarter` columns.
 
 ## Key results
