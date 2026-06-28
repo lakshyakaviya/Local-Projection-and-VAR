@@ -1,6 +1,6 @@
 # Impulse Responses to Monetary Policy Shocks: Local Projections and Proxy SVAR
 
-Estimates the dynamic causal effects of US monetary policy shocks on real GDP and CPI
+Here we estimate the dynamic causal effects of US monetary policy shocks on real GDP and CPI
 using two complementary approaches — Local Projections (Jordà, 2005) and a Proxy SVAR /
 SVAR-IV (Stock & Watson, 2012; Mertens & Ravn, 2013) — on quarterly US data, with a
 provided Romer–Romer style narrative shock series used as the external instrument.
@@ -32,9 +32,9 @@ Open each notebook and run it top-to-bottom ("Restart Kernel & Run All"), in thi
 
 1. **`Data_Merge.ipynb`** — builds `merged_data.csv` from the FRED CSVs + `shocks.csv`
 2. **`part_A.ipynb`** — Local Projections → saves `irf_gdp_lp.png`, `irf_cpi_lp.png`
-3. **`part_B.ipynb`** — Proxy SVAR → saves `irf_gdp_svar.png`, `irf_cpi_svar.png`
+3. **`part_B.ipynb`** — Proxy SVAR(SVAR-IV) → saves `irf_gdp_svar.png`, `irf_cpi_svar.png`
 
-`part_A` and `part_B` both read `merged_data.csv`, so `Data_Merge` must be run first.
+`part_A` and `part_B` both read `merged_data.csv`, so `Data_Merge` must be run first to create the merged dataset. 
 
 ## Input files (expected in the same folder)
 
